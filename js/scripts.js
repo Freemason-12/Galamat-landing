@@ -54,7 +54,7 @@ function criteria() {
     }
 
     if (state == true) {
-        msg.innerHTML = 'Thank You :) Your Message has been submitted successfully. <br> You shall here form us very soon!';
+        msg.innerHTML = 'Спасибо, мы получили ваш ответ. <br> Ожидайте звонка';
         document.getElementById('email').classList.remove("invalid")
     }
     else {
