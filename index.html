@@ -11,80 +11,7 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script defer src="js/scripts.js"></script>
     <title>ЖК GALAMAT</title>
-
-    <style>
-      html, body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      font-family: "Helvetica", sans-serif;
-      }
-      img {
-      max-width: 100%;
-      }
-      .slider-container {
-      height: 50%;
-      width: 50%;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-      }
-      .menu {
-      position: absolute;
-      left: 0;
-      z-index: 900;
-      width: 100%;
-      bottom: 0;
-      }
-      .menu label {
-      cursor: pointer;
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      background: #fff;
-      border-radius: 50px;
-      margin: 0 0.2em 1em;
-      }
-      .menu label:hover,.menu label:focus {
-      background: #458170;
-      }
-      .slide {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 100%;
-      z-index: 10;
-      padding: 8em 1em 0;
-      background-size: cover;
-      background-position: 50% 50%;
-      transition: left 0s 0.75s;
-      }
-      [id^="slide"]:checked + .slide {
-      left: 0;
-      z-index: 100;
-      transition: left 0.65s ease-out;
-      }
-      .slide-1 {
-      background-image: url("Images/Galamat-1or.jpg");
-      }
-      .slide-2 {
-      background-image: url("Images/Galamat-2or.jpg");
-      }
-      .slide-3 {
-      background-image: url("Images/Galamat-3or.jpg");
-      }
-      .slide-4 {
-      background-image: url("Images/Galamat-4or.jpg");
-      }
-      .slide-5 {
-      background-image: url("Images/Galamat-5or.jpg");
-      }
-    </style>
-
 </head>
-
 <body>
     <section id="sec-0">
         <header class="top">
@@ -227,25 +154,41 @@
         </div>
     </section>
 
-                <div class="slider-container">
-                    <div class="menu">
-                        <label for="slide-dot-1"></label>
-                        <label for="slide-dot-2"></label>
-                        <label for="slide-dot-3"></label>
-                        <label for="slide-dot-4"></label>
-                        <label for="slide-dot-5"></label>
+    <div class="all">
+        <input checked type="radio" name="respond" id="desktop">
+            <article id="slider">
+                    <input checked type="radio" name="slider" id="switch1">
+                    <input type="radio" name="slider" id="switch2">
+                    <input type="radio" name="slider" id="switch3">
+                    <input type="radio" name="slider" id="switch4">
+                    <input type="radio" name="slider" id="switch5">
+                <div id="slides">
+                    <div id="overflow">
+                        <div class="image">
+                            <article><img src="Images/Galamat-1or.jpg"></article>
+                            <article><img src="Images/Galamat-2or.jpg"></article>
+                            <article><img src="Images/Galamat-3or.jpg"></article>
+                            <article><img src="Images/Galamat-4or.jpg"></article>
+                            <article><img src="Images/Galamat-5or.jpg"></article>
+                        </div>
                     </div>
-                    <input id="slide-dot-1" type="radio" name="slides" checked>
-                    <div class="slide slide-1"></div>
-                    <input id="slide-dot-2" type="radio" name="slides">
-                    <div class="slide slide-2"></div>
-                    <input id="slide-dot-3" type="radio" name="slides">
-                    <div class="slide slide-3"></div>
-                    <input id="slide-dot-4" type="radio" name="slides">
-                    <div class="slide slide-4"></div>
-                    <input id="slide-dot-5" type="radio" name="slides">
-                    <div class="slide slide-5"></div>
                 </div>
+                <div id="controls">
+                    <label for="switch1"></label>
+                    <label for="switch2"></label>
+                    <label for="switch3"></label>
+                    <label for="switch4"></label>
+                    <label for="switch5"></label>
+                </div>
+                <div id="active">
+                    <label for="switch1"></label>
+                    <label for="switch2"></label>
+                    <label for="switch3"></label>
+                    <label for="switch4"></label>
+                    <label for="switch5"></label>
+                </div>
+            </article>
+    </div>
 
     <section id="sec-5">
         <div class="container">
@@ -253,44 +196,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni reiciendis accusamus autem tenetur vero,
                 facilis omnis, ullam quis mollitia deleniti ea similique laboriosam numquam ab dignissimos! Ducimus,
                 eveniet at. A debitis eum tenetur dolor magni.</p>
-            <div class="cont">
-                <article class="quoteblock">
-                    <div class="quotetxt arrow">
-                        <p><img src="Images/blockquote2.png" alt="quote mark"></p>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius ipsum id inventore facilis
-                            laboriosam est possimus explicabo quis ipsa, perferendis nam ratiendus neque earum iure
-                            maxime non soluta voluptates deleniti provident! Commodi, eveniet?</p>
-                    </div>
-                    <figure>
-                        <img class="customer" src="Images/cust1.png" alt="customer1">
-                        <figcaption>John smith</figcaption>
-                    </figure>
-                </article>
-                <article class="quoteblock">
-                    <div class="quotetxt arrow">
-                        <p><img src="Images/blockquote1.png" alt="quote mark"></p>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius ipsum id inventore facilis
-                            laboriosam est possimus explicabo quis ipsa, perferendis nam ratiendus neque earum iure
-                            maxime non soluta voluptates deleniti provident! Commodi, eveniet?</p>
-                    </div>
-                    <figure>
-                        <img class="customer" src="Images/cust1.png" alt="customer1">
-                        <figcaption>John smith</figcaption>
-                    </figure>
-                </article>
-                <article class="quoteblock">
-                    <div class="quotetxt arrow">
-                        <p><img src="Images/blockquote2.png" alt="quote mark"></p>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius ipsum id inventore facilis
-                            laboriosam est possimus explicabo quis ipsa, perferendis nam ratiendus neque earum iure
-                            maxime non soluta voluptates deleniti provident! Commodi, eveniet?</p>
-                    </div>
-                    <figure>
-                        <img class="customer" src="Images/cust1.png" alt="customer1">
-                        <figcaption>John smith</figcaption>
-                    </figure>
-                </article>
-            </div>
+            
         </div>
         <div class="contactUs">
             <div class="container">
