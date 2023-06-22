@@ -11,6 +11,8 @@ html {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+img { border-radius:5px; }
+
 :root{
     --txtaccent: #fff;
     --txtaccent1: #9D9D9F;
@@ -457,7 +459,7 @@ text-shadow:1px 1px #73757E;
 #sec-5{
     background: url(../Images/bg3.jpg) no-repeat center center/cover;
     text-align: center;
-    padding-top: 2rem;
+    padding: 2rem 0rem 4rem 0rem;
     font-size: 0.9rem;
 }
 #sec-5 h1{
@@ -1160,4 +1162,17 @@ label, a{ /*при наведении на стрелки или переклю�
 
 #controls label{ /*прозрачность стрелок при отводе курсора*/
     transition: opacity 0.2s ease-out;
+}
+
+#dvor {
+/*    border:3px solid black;*/
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow: scroll;
+}
+#dvor > img {
+    width: 60vh;
+    margin: 0px 5px 0px 5px;
 }
