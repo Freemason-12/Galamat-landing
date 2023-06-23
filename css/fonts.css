@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Garet";
+  src: url("fonts/Garet/Garet-Book.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Garet";
+  src: url("fonts/Garet/Garet-Heavy.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Intro";
+  src: url("fonts/Intro/Intro.otf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Intro Inline";
+  src: url("fonts/Intro/Intro Inline.otf") format("truetype");
+  font-weight: normal;
+}
