@@ -165,7 +165,7 @@ img { border-radius:5px; }
 #sec-0 header:last-of-type h1,
 #stick header:last-of-type h1{
     font-size: 1.5rem;
-    font-style: italic;
+    font-style: normal;
     font-weight: bold;
     color: var(--haccent);
     padding: 0px;
@@ -685,6 +685,7 @@ img { border-radius:5px; }
     font-style: italic;
     font-size: 0.8rem;
     line-height: 1.1em;
+    /* font-style: italic; */
     padding: 0px 6px;
     position: absolute;
     bottom: 2px;
@@ -718,7 +719,7 @@ img { border-radius:5px; }
 #sec-8 .about h2{
     font-size: 1.3rem;
     font-weight: 800;
-    font-style: italic;
+    font-style: normal;
     color: var(--haccent);
     padding-bottom: 5px;
     margin-bottom: 1rem;
@@ -839,6 +840,11 @@ img { border-radius:5px; }
 #sec-6 .contact p:last-of-type::before,
 #sec-8 .contact p:last-of-type::before{
     content: "\f3cd";
+}
+
+.fa-whatsapp {
+    width: 1.1rem;
+    object-fit: contain;
 }
 /* SECTION SEVEN */
 #sec-7 {
