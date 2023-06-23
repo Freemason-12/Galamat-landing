@@ -1,27 +1,4 @@
-/* @import url("fonts.css"); */
-@font-face {
-  font-family: "Garet";
-  src: url(fonts/Garet/Garet-Book.ttf) format("truetype");
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "Garet";
-  src: url("fonts/Garet/Garet-Heavy.ttf") format("truetype");
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "Intro";
-  src: url("fonts/Intro/Intro.otf") format("truetype");
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "Intro Inline";
-  src: url("fonts/Intro/Intro Inline.otf") format("truetype");
-  font-weight: normal;
-}
+@import url("fonts.css");
 
 *{
     margin: 0px;
@@ -33,7 +10,8 @@
 html {
     font-size: 12px;
     color: #000;
-    font-family: Garet, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: Garet, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: 'Garet';
     font-weight: normal;
 }
 
@@ -46,14 +24,8 @@ img { border-radius:5px; }
     --textaccent3: #484848;
     --txtaccent4: #000;
     --txtaccent5: #E5E5E5;
-    /* --haccent: #FFCB0F; */
-    /* --haccent:#5fb29a; */
     --haccent: #DEB887;
     --haccent_withOpacity: #FFDEAD;
-    /* --haccent_withOpacity:#5fb29a; */
-    /* --haccent_withOpacity: rgba(255, 203, 15,0.6); */
-    /* --haccent2: #C79E23; */
-    /* --haccent2: #458170; */
     --haccent2: #DEB887;
     --bgaccent: #1A1C27;
     --bgaccent_withOpacity: rgba(26, 28, 39,0.96);
@@ -66,6 +38,17 @@ img { border-radius:5px; }
     width: 95%;
     margin: 0px auto;
     padding: 0px;
+}
+#stick,
+#sec-0,
+#sec-1,
+#sec-2,
+#sec-3,
+#sec-4,
+#sec-5,
+#sec-6,
+#sec-7 {
+    font-family: 'Garet';
 }
 /* SECTION ZERO = LANDING VIEW ____________________________________________________________*/
 #sec-0,
@@ -83,6 +66,7 @@ img { border-radius:5px; }
 #stick header.top {
     background-color: var(--haccent);
     font-size: 0.85rem;
+    font-family: 'Garet';
     color: var(--txtaccent4);
     padding-top: 6px;
 }
@@ -1304,7 +1288,7 @@ label, a{ /*при наведении на стрелки или переклю�
 }
 
 #active label:hover{ /*поведение чекбокса при наведении*/
-    background: var(--haccent);
+    background: var(--haccent_withOpacity);
     border-color: #777 !important; /*выполнение в любом случае*/
 }
 
@@ -1314,7 +1298,7 @@ label, a{ /*при наведении на стрелки или переклю�
 #switch3:checked ~ #active label:nth-child(3),
 #switch4:checked ~ #active label:nth-child(4),
 #switch5:checked ~ #active label:nth-child(5){
-    background: var(--haccent_withOpacity);
+    background: var(--haccent);
     border-color: var(--haccent_withOpacity) !important;
 }
 
@@ -1341,10 +1325,4 @@ label, a{ /*при наведении на стрелки или переклю�
 #dvor > img {
     width: 60vh;
     margin: 0px 5px 0px 5px;
-}
-
-html {
-    font-family: 'Intro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: normal;
-    font-style: normal;
 }
