@@ -84,4 +84,4 @@ search.addEventListener('click', function (){
             searchBar.classList.toggle('hide')    
          }
  } )
-
+ 
