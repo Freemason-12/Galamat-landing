@@ -59,29 +59,11 @@ function criteria() {
     }
     else {
         document.getElementById('email').classList.add("invalid")
-    }   
-}    
+    }
+}
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    criteria();
-});
+// form.addEventListener("submit", (e) => {
+//     e.preventDefault();
+//     criteria();
+// });
 
-//SEARCH
-const search = document.getElementById('search');
-const searchBar = document.getElementById('searchBar');
-//click on the Magnifier icon to toggle the search bar
-search.addEventListener('click', function (){
-    searchBar.classList.toggle('show')
-    searchBar.classList.toggle('hide')
-})
-//press escape to close the search bar
- document.addEventListener('keydown', (event) => {
-     var keyName = event.key;
-     console.log("keyName");
-     if ((keyName == 'Escape' && searchBar.classList.contains('show') == true)) {
-            searchBar.classList.toggle('show')
-            searchBar.classList.toggle('hide')    
-         }
- } )
- 
