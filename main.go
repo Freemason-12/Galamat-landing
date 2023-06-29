@@ -25,7 +25,7 @@ func main() {
 	log.Println("database opened successfully")
 
 	// Parsing a template of the main landing page
-	template, err := template.ParseFiles("./index.html")
+	template, err := template.ParseFiles("./index-kz.html", "index-ru.html")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -39,7 +39,9 @@ func main() {
 
 	// Handling routes
 	mux.Handle("/static/", http.StripPrefix("/static", staticFileServer))
-	mux.HandleFunc("/", app.serve)
+	mux.HandleFunc("/", app.home)
+	mux.HandleFunc("/kz", app.serveKZ)
+	mux.HandleFunc("/ru", app.serveRU)
 
 	// Starting a server
 	log.Println("starting server at port:4000")
@@ -47,12 +49,16 @@ func main() {
 	log.Fatal(err)
 }
 
-// Main handler which manages the landing page and its form
-func (app *application) serve(w http.ResponseWriter, r *http.Request) {
+func (app *application) home(w http.ResponseWriter, r *http.Request) {
+	http.Redirect(w, r, "/kz", http.StatusSeeOther)
+}
+
+// Main handler which manages the landing page and its form (russian version)
+func (app *application) serveRU(w http.ResponseWriter, r *http.Request) {
 
 	switch r.Method {
 	case "GET":
-		app.Template.ExecuteTemplate(w, "index.html", nil)
+		app.Template.ExecuteTemplate(w, "index-ru.html", nil)
 	case "POST":
 		err := r.ParseForm()
 		name := r.FormValue("name")
@@ -64,7 +70,29 @@ func (app *application) serve(w http.ResponseWriter, r *http.Request) {
 		sendEmail("Subject:" + name + " " + phone_num)
 
 		log.Println("record added")
-		http.Redirect(w, r, "/#sec-7", http.StatusSeeOther)
+		http.Redirect(w, r, "/ru#sec-7", http.StatusSeeOther)
+	}
+
+}
+
+// Main handler which manages the landing page and its form (kazakh version)
+func (app *application) serveKZ(w http.ResponseWriter, r *http.Request) {
+
+	switch r.Method {
+	case "GET":
+		app.Template.ExecuteTemplate(w, "index-kz.html", nil)
+	case "POST":
+		err := r.ParseForm()
+		name := r.FormValue("name")
+		phone_num := r.FormValue("phone_num")
+
+		cmd := `insert into responses(name, phone_number) values(?, ?);`
+		_, err = app.DB.Exec(cmd, name, phone_num)
+		ErrorCheck(w, err)
+		sendEmail("Subject:" + name + " " + phone_num)
+
+		log.Println("record added")
+		http.Redirect(w, r, "/kz#sec-7", http.StatusSeeOther)
 	}
 
 }
@@ -73,7 +101,7 @@ func sendEmail(message string) {
 	auth := smtp.PlainAuth("", "galamat.del@gmail.com", "pleqqpxjgmxmvrvu", "smtp.gmail.com")
 	ms := []byte(message)
 	// var email []string = []string{"delconstruction.ala@gmail.com"}
-	err := smtp.SendMail("smtp.gmail.com:587", auth, "galamat.del@gmail.com", []string{"delconstruction.ala@gmail.com"}, ms)
+	err := smtp.SendMail("smtp.gmail.com:587", auth, "galamat.del@gmail.com", []string{"maksatlego@gmail.com"}, ms)
 	if err != nil {
 		log.Fatal(err)
 	}
