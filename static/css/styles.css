@@ -373,7 +373,8 @@ img { border-radius:5px; }
     font-size: 1.7rem;
     margin-bottom: 1.6rem;
     color: var(--txtaccent);
-    font-weight: 800;
+    font-weight: bold;
+    text-align:center;
 }
 #sec-2 p, #sec-2 ul, #sec-6 p{
     color: var(--txtaccent);
@@ -736,7 +737,7 @@ img { border-radius:5px; }
     row-gap: 15px;
     color: var(--txtaccent5);
 }
-#sec-6 h1,
+/* #sec-6 h1, */
 #sec-8 h1{
     font-weight: 400;
     font-size: 1.25rem;
@@ -1277,6 +1278,12 @@ label, a{ /*при наведении на стрелки или переклю�
     cursor: pointer;
 }
 
+#slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .all input{ /*скрывает стандартные инпуты (чекбоксы) на странице*/
     display: none;
 }
@@ -1303,8 +1310,8 @@ label, a{ /*при наведении на стрелки или переклю�
 }
 
 #controls{ /*положение блока всех управляющих элементов*/
-    margin: -25% 0 0 0;
-    width: 100%;
+    margin: 0 0 -25% 0;
+    width: 70%;
     height: 50px;
 }
 
