@@ -47,6 +47,7 @@ img { border-radius:5px; }
 #sec-4,
 #sec-5,
 #sec-6,
+#sec-65,
 #sec-7,
 #sec-8 {
     font-family: 'Garet';
@@ -723,17 +724,20 @@ img { border-radius:5px; }
 }
 /* SECTION 6 ____________________________________________________________________*/
 #sec-6,
+#sec-65,
 #sec-8{
     background: linear-gradient(rgba(0, 0, 0,0.9),rgba(0, 0, 0,0.9)), url(../static/Images/rascacielos-nueva-york.jpg) no-repeat center center/cover;
     padding-top: 2rem;
     padding-bottom: 4rem;
     font-size: 0.8rem;
 }
-#sec-6 .container,
+/* #sec-6 .container, */
+/* #sec-65 .container, */
 #sec-8 .container{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    align-items:center;
     row-gap: 15px;
     color: var(--txtaccent5);
 }
@@ -874,7 +878,40 @@ img { border-radius:5px; }
     width: 1.1rem;
     object-fit: contain;
 }
-/* SECTION SEVEN */
+
+/* SECTION 6.5_____________________________________________________________________ */
+#sec-65 .container {
+    color: var(--txtaccent5);
+}
+#sec-65 h1 {
+    font-weight:bold;
+    text-align:center;
+    font-size: 1.3rem;
+}
+#base-floor {
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+}
+#base-floor > img {
+    height: 100%;
+}
+.arrow-left, .arrow-right{
+    border:none;
+    background-color: transparent;
+    color: var(--haccent);
+    opacity: 0.5;
+    margin:1rem;
+}
+.arrow-left:hover, .arrow-right:hover {opacity:0.7;}
+.arrow-left:active, .arrow-right:active {opacity:0.7;}
+.controllers {
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+}
+
+/* SECTION 7 _____________________________________________________________________*/
 #sec-7 {
     background-color: var(--bgaccent);
     padding: 20px 0px 0px;
