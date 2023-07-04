@@ -882,6 +882,7 @@ img { border-radius:5px; }
 /* SECTION 6.5_____________________________________________________________________ */
 #sec-65 .container {
     color: var(--txtaccent5);
+    position: relative;
 }
 #sec-65 h1 {
     font-weight:bold;
@@ -896,6 +897,25 @@ img { border-radius:5px; }
 #base-floor > img {
     height: 100%;
 }
+
+#dots {
+    position: absolute;
+    top:0;
+    height:40vh;
+}
+
+.dot {
+    position: absolute;
+    width: 1vh;
+    height: 1vh;
+    background-color: green;
+    border-radius: 50%;
+}
+
+/* .dot:nth-child(1) { */
+/*     top: 10%; */
+/* } */
+
 .arrow-left, .arrow-right{
     border:none;
     background-color: transparent;
