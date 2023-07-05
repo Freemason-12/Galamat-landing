@@ -114,7 +114,7 @@ func sendEmail(message string) {
 	auth := smtp.PlainAuth("", "galamat.del@gmail.com", passwd, "smtp.gmail.com")
 	ms := []byte(message)
 	// var email []string = []string{"delconstruction.ala@gmail.com"}
-	err := smtp.SendMail("smtp.gmail.com:587", auth, "galamat.del@gmail.com", []string{"maksatlego@gmail.com"}, ms)
+	err := smtp.SendMail("smtp.gmail.com:587", auth, "galamat.del@gmail.com", []string{"delconstruction.ala@gmail.com"}, ms)
 	if err != nil {
 		log.Fatal(err)
 	}
