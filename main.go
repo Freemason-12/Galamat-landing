@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"net/smtp"
 	"os"
+	"path/filepath"
 )
 
 type application struct {
@@ -16,9 +17,16 @@ type application struct {
 }
 
 func main() {
+
+	ewd, err := os.Executable()
+	pwd := filepath.Dir(ewd)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	// Opening a database
 	log.Println("opening database")
-	db, err := sql.Open("sqlite3", "./db/db.sqlite.db")
+	db, err := sql.Open("sqlite3", pwd+"db/db.sqlite.db")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -26,7 +34,7 @@ func main() {
 	log.Println("database opened successfully")
 
 	// Parsing a template of the main landing page
-	template, err := template.ParseFiles("./index-kz.html", "index-ru.html")
+	template, err := template.ParseFiles(pwd+"/index-kz.html", pwd+"/index-ru.html")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -36,7 +44,7 @@ func main() {
 	mux := http.NewServeMux()
 
 	// Serving static files (CSS, JS)
-	staticFileServer := http.FileServer(http.Dir("./static/"))
+	staticFileServer := http.FileServer(http.Dir(pwd + "/static/"))
 
 	// Handling routes
 	mux.Handle("/static/", http.StripPrefix("/static", staticFileServer))
