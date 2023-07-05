@@ -108,6 +108,9 @@ func (app *application) serveKZ(w http.ResponseWriter, r *http.Request) {
 
 func sendEmail(message string) {
 	passwd := os.Getenv("PASSWD")
+
+	log.Printf("password is: %v", passwd)
+
 	auth := smtp.PlainAuth("", "galamat.del@gmail.com", passwd, "smtp.gmail.com")
 	ms := []byte(message)
 	// var email []string = []string{"delconstruction.ala@gmail.com"}
