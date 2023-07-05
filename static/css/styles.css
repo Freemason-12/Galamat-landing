@@ -895,7 +895,10 @@ img { border-radius:5px; }
     justify-content: center;
 }
 #base-floor > img {
-    height: 100%;
+    object-fit: contain;
+    display: block;
+    width: 80%;
+    height: auto;
 }
 
 #dots {
