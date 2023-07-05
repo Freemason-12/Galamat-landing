@@ -26,7 +26,7 @@ func main() {
 
 	// Opening a database
 	log.Println("opening database")
-	db, err := sql.Open("sqlite3", pwd+"db/db.sqlite.db")
+	db, err := sql.Open("sqlite3", pwd+"/db/db.sqlite.db")
 	if err != nil {
 		log.Fatal(err)
 	}
