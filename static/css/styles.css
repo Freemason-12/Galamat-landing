@@ -1205,6 +1205,7 @@ img { border-radius:5px; }
     #sec-7 .contactUs>.container {
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
     #sec-5 .contactUs aside,
     #sec-7 .contactUs aside{
@@ -1315,6 +1316,7 @@ article img{ /*размер изображений слайдера*/
     background: url(../Images/prev.png) no-repeat; /*заливка фона картинкой без повторений*/
     float: left;
     margin: 0 0 0 -84px; /*сдвиг влево*/
+    /* margin: 0 0 0 -84px;  */
     display: block;
     height: 68px;
     width: 68px;
@@ -1371,7 +1373,7 @@ label, a{ /*при наведении на стрелки или переклю�
 
 #controls{ /*положение блока всех управляющих элементов*/
     margin: 0 0 -25% 0;
-    width: 70%;
+    width: 50%;
     height: 50px;
 }
 
@@ -1411,8 +1413,9 @@ label, a{ /*при наведении на стрелки или переклю�
     opacity: 0.6;
 }
 
-#controls label{ /*прозрачность стрелок при отводе курсора*/
+#controls > label{ /*прозрачность стрелок при отводе курсора*/
     transition: opacity 0.2s ease-out;
+    margin: 1rem;
 }
 
 #dvor {

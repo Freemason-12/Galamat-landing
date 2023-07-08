@@ -24,9 +24,11 @@ const container = document.querySelector("#base-floor")
 const dir = "static/Images/blueprints/"
 
 let currentIndex = 0
-const images = ["Base floor.jpg", "1room-35,68.jpg", "1room-35,81.jpg",
-                "1room-35,82.jpg","1room-42,55.jpg", "2room-50,8.jpg",
-                "2room-55,51.jpg", "2room-55,65.jpg"]
+// const images = ["Base floor.jpg", "1room-35,68.jpg", "1room-35,81.jpg",
+//                 "1room-35,82.jpg","1room-42,55.jpg", "2room-50,8.jpg",
+//                 "2room-55,51.jpg", "2room-55,65.jpg"]
+const images = ["Base floor.jpg", "%25R-0.webp", "%25R-1.webp", "%25R-2.webp",
+  "%25R-3.webp", "%25R-4.webp", "%25R-5.webp", "%25R-6.webp"]
 const imageDOM = []
 images.map((item) => {
   const el = document.createElement("img")
@@ -35,13 +37,13 @@ images.map((item) => {
 })
 
 nextButton.onclick = () => {
-  currentIndex += (currentIndex < 7)? 1 : (-7);
+  currentIndex += (currentIndex < 7) ? 1 : (-7);
   container.innerHTML = ""
   container.appendChild(imageDOM[currentIndex])
 }
 
 prevButton.onclick = () => {
-  currentIndex -= (currentIndex > 0)? 1 : (-7);
+  currentIndex -= (currentIndex > 0) ? 1 : (-7);
   container.innerHTML = ""
   container.appendChild(imageDOM[currentIndex])
 }
