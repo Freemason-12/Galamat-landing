@@ -2,13 +2,15 @@ package main
 
 import (
 	"database/sql"
-	_ "github.com/mattn/go-sqlite3"
+	// "fmt"
 	"html/template"
 	"log"
 	"net/http"
 	"net/smtp"
 	"os"
 	"path/filepath"
+
+	_ "github.com/mattn/go-sqlite3"
 )
 
 type application struct {
@@ -68,6 +70,7 @@ func (app *application) serveRU(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
 		app.Template.ExecuteTemplate(w, "index-ru.html", nil)
+		log.Println(app.Template.ExecuteTemplate(w, "index-ru.html", nil))
 	case "POST":
 		err := r.ParseForm()
 		name := r.FormValue("name")
