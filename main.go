@@ -70,7 +70,7 @@ func (app *application) serveRU(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
 		app.Template.ExecuteTemplate(w, "index-ru.html", nil)
-		log.Println(app.Template.ExecuteTemplate(w, "index-ru.html", nil))
+		// log.Println(app.Template.ExecuteTemplate(w, "index-kzbak.html", nil))
 	case "POST":
 		err := r.ParseForm()
 		name := r.FormValue("name")
