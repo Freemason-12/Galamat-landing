@@ -121,6 +121,10 @@ func sendEmail(message string) {
 	if err != nil {
 		log.Fatal(err)
 	}
+	err = smtp.SendMail("smtp.gmail.com:587", auth, "galamat.del@gmail.com", []string{"galamat.boralday@gmail.com"}, ms)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 // Checking for errors just in case
