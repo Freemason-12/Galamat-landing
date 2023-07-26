@@ -22,13 +22,15 @@ func main() {
 
 	ewd, err := os.Executable()
 	pwd := filepath.Dir(ewd)
+	swd := filepath.Dir(pwd)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	// Opening a database
 	log.Println("opening database")
-	db, err := sql.Open("sqlite3", pwd+"/db/db.sqlite.db")
+	// db, err := sql.Open("sqlite3", pwd+"/db/db.sqlite.db")
+	db, err := sql.Open("sqlite3", swd+"/db/db.sqlite.db")
 	if err != nil {
 		log.Fatal(err)
 	}
