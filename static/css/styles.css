@@ -552,7 +552,7 @@ img { border-radius:5px; }
 #sec-4 article figure p{
     color: var(--txtaccent);
     font-size: 1rem;
-    text-shadow:1px 1px #73757E;
+    /* text-shadow:1px 1px #73757E; */
     text-align: start;
 }
 
@@ -639,7 +639,7 @@ img { border-radius:5px; }
 #sec-7 figcaption{
     text-transform: uppercase;
     font-weight: 600;
-    text-shadow:1px 1px #73757E;
+    /* text-shadow:1px 1px #73757E; */
 }
 #sec-5 article:nth-of-type(2) div.quotetxt,
 #sec-7 article:nth-of-type(2) div.quotetxt{
