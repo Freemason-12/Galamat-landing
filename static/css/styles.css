@@ -53,6 +53,148 @@ img { border-radius:5px; }
     font-family: 'Garet';
 }
 
+@keyframes drop_animation {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+#floating_contacts {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    background: var(--haccent2);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.4);
+    animation: drop_animation 0.4s;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+#floating_contacts:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#contacts_dropdown { display: none; }
+
+#contacts_dropdown[data-show="true"] {
+    z-index: 2;
+    display: block;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: calc(100% + 25px);
+    background: rgba(0,0,0,0.3);
+    animation: drop_animation 0.4s;
+}
+
+#contacts_dropdown[data-show="true"] > div {
+    background: white;
+    padding: 30px 30px 70px 30px;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%, 50%);
+    font-family: Garet, sans-serif;
+    width: 400px;
+}
+#floating_socials > a {
+    color: white;
+    text-decoration: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 10px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+}
+/* #floating_socials img:last-of-type { transform: translateY(2px);} */
+#floating_socials img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+#floating_socials > a:nth-of-type(1) {
+    background: linear-gradient(to bottom, #43EB61, #10C73A)
+}
+#floating_socials > a:nth-of-type(2) {
+    background: linear-gradient(to bottom left, #7C4CAF, #BA327F, #F89E53)
+}
+#floating_socials > a:nth-of-type(3) {
+    background: white;
+}
+
+#contacts_dropdown[data-show="true"] label { width: 40%; }
+#contacts_dropdown[data-show="true"] input[type="text"] {
+    width: 55%;
+    padding: 20px;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0,0,0,0.02);
+    margin-bottom: 1rem;
+}
+#contacts_dropdown[data-show="true"] input[type="submit"] {
+    /* margin: 0px calc((100% - 100px) / 2); */
+    padding: 6px 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: var(--textaccent3);
+    color: var(--txtaccent5);
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#contacts_dropdown[data-show="true"] input[type="submit"]:disabled { opacity: 0.5; }
+
+#contacts_dropdown[data-show="true"] button {
+    position: absolute;
+    top: 20px;
+    right: 20px; background: transparent;
+    border: none;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+}
+#contacts_dropdown[data-show="true"] button > hr {
+    width: 100%;
+    height: 1px;
+    background: black;
+    border: 1px solid black;
+    margin: 0px;
+}
+#contacts_dropdown[data-show="true"] button:hover {
+    opacity: 0.7;
+}
+#contacts_dropdown[data-show="true"] button > hr:first-of-type{ transform: translateY(1px) rotate(45deg); }
+#contacts_dropdown[data-show="true"] button > hr:last-of-type{ transform: translateY(-1px) rotate(-45deg); }
+
+/* #floating_socials {display: block;} */
+
 .lang {
     background-color: var(--bgaccent);
     border-radius: 15px;
@@ -683,6 +825,7 @@ img { border-radius:5px; }
     border-style: none;
     color: var(--textaccent3);
 }
+#submit_floating,
 #sec-5 .contactUs form input[type=submit],
 #sec-7 .contactUs form input[type=submit]{
     padding: 6px 20px;
@@ -690,6 +833,8 @@ img { border-radius:5px; }
     font-weight: 600;
     background-color: var(--textaccent3);
     color: var(--txtaccent5);
+    border: none;
+    border-radius: 5px;
 }
 #sec-5 .contactUs form input:focus,
 #sec-7 .contactUs form input:focus{

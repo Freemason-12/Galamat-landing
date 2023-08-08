@@ -23,7 +23,8 @@
         #sec-6,
         #sec-65,
         #sec-7,
-        #sec-8 {
+        #sec-8,
+        #contacts_dropdown[data-show="true"]>div {
             font-family: sans-serif;
         }
 
@@ -82,6 +83,14 @@
                 <label for="menu"><i class="fas fa-bars"></i></label>
                 <input type="checkbox" id="menu">
                 <nav>
+                    <a href="#sec-0">Басы</a>
+                    <a href="#sec-1">Проект&nbsp;туралы</a>
+                    <a href="#sec-2">Архитектура</a>
+                    <a href="#sec-3">Орналасуы</a>
+                    <a href="#sec-4">Артықшылықтары</a>
+                    <a href="#sec-5">Аула</a>
+                    <a href="#sec-6">Подъездер</a>
+                    <a href="#sec-65">Планировкасы</a>
                     <a href="#sec-7">Байланысу</a>
                 </nav>
             </div>
@@ -327,7 +336,7 @@
                     <h2>жауап формасын толтырыңыз!</h2>
                 </aside>
                 <form id="form" method="POST">
-                    <input type="text" name="name" id="" placeholder="ФИО" required>
+                    <input type="text" name="name" id="name_form" placeholder="ФИО" required>
                     <input type="text" name="phone_num" id="phone_num" value="+7" placeholder="Номер телефона" required>
                     <input type="submit" value="жіберу" id="submit" disabled>
                     <p id="msg"></p>
@@ -359,6 +368,34 @@
             </div>
         </div>
     </section>
+    <div id="floating_contacts">
+        <img src="static/Images/live-chat.svg" alt="live-chat">
+    </div>
+    <div id="contacts_dropdown" data-show="false">
+        <div>
+            <h2>Бізбен байланысу</h2>
+            <div id="floating_socials">
+                <a href="http://wa.me/+77474565754"><img src="static/Images/whatsapp-line.svg" alt="whatsapp icon"></a>
+                <a href="https://instagram.com/galamat.boralday?igshid=MzRlODBiNWFlZA=="><img
+                        src="static/Images/instagram-fill.svg" alt="instagram icon"></a>
+                <a href="mailto:delconstruction.ala@gmail.com"><img src="static/Images/gmail-color.svg"
+                        alt="gmail logo"></a>
+            </div>
+            <p>немесе біз сізге қоңырау шала аламыз</p>
+            <form method="post">
+                <label for="name_form_floating">Aты-жөніңіз:</label>
+                <input type="text" name="name" id="name_form_floating" placeholder="ФИО" required> <br>
+                <label for="phone_num_floating">Телефон нөмірі:</label>
+                <input type="text" name="phone_num" id="phone_num_floating" value="+7" placeholder="Номер телефона"
+                    required> <br>
+                <input type="submit" value="жіберу" id="submit_floating" disabled>
+            </form>
+            <button>
+                <hr>
+                <hr>
+            </button>
+        </div>
+    </div>
     <script src="static/js/wow.min.js"></script>
     <script> new WOW().init();</script>
     <script src="static/js/bootstrap.bundle.min.js"></script>
