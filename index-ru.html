@@ -21,6 +21,18 @@
         .lang>a:nth-child(1) {
             color: var(--haccent);
         }
+
+        #sec-0 header nav a,
+        #stick header nav a {
+            padding: 5px;
+            display: block;
+            text-decoration: none;
+            color: var(--txtaccent1);
+            text-align: center;
+            padding: 10px;
+            transition: background-color 0.6s ease;
+            border-bottom: solid 1px var(--txtaccent1);
+        }
     </style>
     <title>ЖК GALAMAT</title>
 
@@ -67,6 +79,14 @@
                 <label for="menu"><i class="fas fa-bars"></i></label>
                 <input type="checkbox" id="menu">
                 <nav>
+                    <a href="#sec-0">Главная</a>
+                    <a href="#sec-1">О&nbsp;проекте</a>
+                    <a href="#sec-2">Архитектура</a>
+                    <a href="#sec-3">Расположение</a>
+                    <a href="#sec-4">Преимущества</a>
+                    <a href="#sec-5">Двор</a>
+                    <a href="#sec-6">Подъезды</a>
+                    <a href="#sec-65">Планировка</a>
                     <a href="#sec-7">Обратная связь</a>
                 </nav>
             </div>
@@ -305,7 +325,7 @@
                     <h2>заполняйте форму ответов!</h2>
                 </aside>
                 <form id="form" method="POST">
-                    <input type="text" name="name" id="" placeholder="ФИО" required>
+                    <input type="text" name="name" id="name_form" placeholder="ФИО" required>
                     <input type="text" name="phone_num" id="phone_num" value="+7" placeholder="Номер телефона" required>
                     <input type="submit" value="отправить" id="submit" disabled>
                     <p id="msg"></p>
@@ -326,8 +346,6 @@
                 <a href="https://instagram.com/galamat.boralday?igshid=MzRlODBiNWFlZA=="><i
                         class="fab fa-instagram"></i></a>
                 <a href="mailto:delconstruction.ala@gmail.com"><i class="fab fa-google-plus-g"></i></a>
-                <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
-                <!-- <a href="#"><i class="fab fa-youtube-square"></i></a> -->
             </div>
             <div class="contact">
                 <h1>Обратная связь</h1>
@@ -339,6 +357,34 @@
             </div>
         </div>
     </section>
+    <div id="floating_contacts">
+        <img src="static/Images/live-chat.svg" alt="live-chat">
+    </div>
+    <div id="contacts_dropdown" data-show="false">
+        <div>
+            <h2>Связаться с нами</h2>
+            <div id="floating_socials">
+                <a href="http://wa.me/+77474565754"><img src="static/Images/whatsapp-line.svg" alt="whatsapp icon"></a>
+                <a href="https://instagram.com/galamat.boralday?igshid=MzRlODBiNWFlZA=="><img
+                        src="static/Images/instagram-fill.svg" alt="instagram icon"></a>
+                <a href="mailto:delconstruction.ala@gmail.com"><img src="static/Images/gmail-color.svg"
+                        alt="gmail logo"></a>
+            </div>
+            <p>можем позвонить вам</p>
+            <form method="post">
+                <label for="name_form_floating">ФИО:</label>
+                <input type="text" name="name" id="name_form_floating" placeholder="ФИО" required> <br>
+                <label for="phone_num_floating">Номер телефона:</label>
+                <input type="text" name="phone_num" id="phone_num_floating" value="+7" placeholder="Номер телефона"
+                    required> <br>
+                <input type="submit" value="отправить" id="submit_floating" disabled>
+            </form>
+            <button>
+                <hr>
+                <hr>
+            </button>
+        </div>
+    </div>
     <script src="static/js/wow.min.js"></script>
     <script> new WOW().init();</script>
     <script src="static/js/bootstrap.bundle.min.js"></script>
