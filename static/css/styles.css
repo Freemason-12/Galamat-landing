@@ -259,7 +259,7 @@ img { border-radius:5px; }
 #sec-0 header.top p,
 #stick header.top p {
     display: flex;
-    width: 45%;
+    /* width: 45%; */
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 0px;
@@ -297,7 +297,7 @@ img { border-radius:5px; }
 #sec-0 .top .social,
 #stick .top .social {
     display: flex;
-    width: 45%;
+    /* width: 45%; */
     justify-content: flex-end;
     gap: 5px;
 }
