@@ -8,22 +8,24 @@ function maskNumber(number) {
   else return number
 }
 
-const name_form = document.querySelector("#name_form")
-const phone_form = document.querySelector("#phone_num")
-const submit_button = document.querySelector("#submit")
+const qselect = x => document.querySelector(x)
 
-const name_form_f = document.querySelector("#name_form_floating")
-const phone_form_f = document.querySelector("#phone_num_floating")
-const submit_button_f = document.querySelector("#submit_floating")
+const name_form = qselect("#name_form")
+const phone_form = qselect("#phone_num")
+const submit_button = qselect("#submit")
 
-const floating_contacts_button = document.querySelector("#floating_contacts")
-const contacts_dropdown = document.querySelector("#contacts_dropdown");
-const contacts_dropdown_close = document.querySelector("#contacts_dropdown > div > button");
+const name_form_f = qselect("#name_form_floating")
+const phone_form_f = qselect("#phone_num_floating")
+const submit_button_f = qselect("#submit_floating")
 
-const prevButton = document.querySelector(".arrow-left")
-const nextButton = document.querySelector(".arrow-right")
-const currentImage = document.querySelector("#base-floor > img")
-const container = document.querySelector("#base-floor")
+const floating_contacts_button = qselect("#floating_contacts")
+const contacts_dropdown = qselect("#contacts_dropdown");
+const contacts_dropdown_close = qselect("#contacts_dropdown > div > button");
+
+const prevButton = qselect(".arrow-left")
+const nextButton = qselect(".arrow-right")
+const currentImage = qselect("#base-floor > img")
+const container = qselect("#base-floor")
 const dir = "static/Images/blueprints/"
 
 function main() {
