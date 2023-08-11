@@ -14,6 +14,8 @@ html {
     font-family: 'Garet';
     font-weight: normal;
 }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
 
 img { border-radius:5px; }
 
@@ -235,6 +237,8 @@ img { border-radius:5px; }
     top:0;
     z-index: 2;
 }
+
+.stick > .container a { color: var(--txtaccent3); }
 
 #sec-0 header.top,
 #stick header.top {
@@ -890,7 +894,8 @@ img { border-radius:5px; }
 }
 /* #sec-6 .container, */
 /* #sec-65 .container, */
-#sec-8 .container{
+#sec-8 .container,
+#sec-8 a {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -1410,6 +1415,8 @@ img { border-radius:5px; }
     #sec-8 .contact {
         width: 18%;
     }
+
+    .contact > p a { color: var(--txtaccent5); }
 }
 @media (min-width: 1400px) {
     html{
