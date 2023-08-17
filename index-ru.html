@@ -11,6 +11,7 @@
     <link href="static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="static/css/styles.css" rel="stylesheet" type="text/css">
     <link href="static/css/fonts.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat">
     <script defer src="static/js/script.js"></script>
     <style>
         .lang>a:nth-child(2) {
@@ -32,6 +33,10 @@
             padding: 10px;
             transition: background-color 0.6s ease;
             border-bottom: solid 1px var(--txtaccent1);
+        }
+
+        html {
+            font-weight: bold;
         }
     </style>
     <title>ЖК GALAMAT</title>
@@ -358,6 +363,10 @@
     <div id="floating_contacts">
         <img src="static/Images/live-chat.svg" alt="live-chat">
     </div>
+    <div id="notification">
+        Понравился наш Жилой Комплекс?<br>Свяжитесь с нами!
+    </div>
+    <!-- Drpodown appearing when floating_contacts is pressed, not shown by default -->
     <div id="contacts_dropdown" data-show="false">
         <div>
             <h2>Связаться с нами</h2>
