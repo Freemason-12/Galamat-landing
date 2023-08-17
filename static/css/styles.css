@@ -11,7 +11,8 @@ html {
     font-size: 12px;
     color: #000;
     /* font-family: Garet, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-    font-family: 'Garet';
+    /* font-family: 'Garet'; */
+    font-family: Montserrat;
     font-weight: normal;
 }
 a { text-decoration: none; }
@@ -52,7 +53,8 @@ img { border-radius:5px; }
 #sec-65,
 #sec-7,
 #sec-8 {
-    font-family: 'Garet';
+    /* font-family: 'Garet'; */
+    font-family: Montserrat;
 }
 
 @keyframes drop_animation {
@@ -76,6 +78,12 @@ img { border-radius:5px; }
     100% { transform: rotate(0deg); }
 }
 
+@keyframes notify {
+0%   { transform: translateY(20px); opacity: 0; }
+99%  { transform: translateY(20px); opacity: 0; }
+100% { transform: translateY(0px); opacity: 1; }
+}
+
 #floating_contacts {
     position: fixed;
     right: 15px;
@@ -97,6 +105,24 @@ img { border-radius:5px; }
     transition: transform 0.3s, box-shadow 0.3s;
 }
 #floating_contacts > img { animation: wibble 4s infinite; }
+
+#notification {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    padding: 25px;
+    border-radius: 25px;
+    background: white;
+    border: #27ae6044 dashed 3px;
+    font-weight: bold;
+    font-size: 17px;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+    animation-name: notify;
+    animation-duration: 30s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    z-index: 2;
+}
 
 #contacts_dropdown { display: none; }
 
@@ -124,7 +150,8 @@ img { border-radius:5px; }
     right: 50%;
     bottom: 50%;
     transform: translate(50%, 50%);
-    font-family: Garet, sans-serif;
+    /* font-family: Garet, sans-serif; */
+    font-family: Montserrat;
     width: 400px;
 }
 #floating_socials > a {
@@ -244,7 +271,8 @@ img { border-radius:5px; }
 #stick header.top {
     background-color: var(--haccent);
     font-size: 0.85rem;
-    font-family: 'Garet';
+    /* font-family: 'Garet'; */
+    font-family: Montserrat, sans-serif;
     color: var(--txtaccent4);
     padding-top: 6px;
 }

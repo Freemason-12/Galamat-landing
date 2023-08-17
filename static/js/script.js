@@ -22,6 +22,8 @@ const floating_contacts_button = qselect("#floating_contacts")
 const contacts_dropdown = qselect("#contacts_dropdown");
 const contacts_dropdown_close = qselect("#contacts_dropdown > div > button");
 
+const notification = qselect("#notification")
+
 const prevButton = qselect(".arrow-left")
 const nextButton = qselect(".arrow-right")
 const currentImage = qselect("#base-floor > img")
@@ -46,6 +48,8 @@ function main() {
   name_form_f.oninput = () => {
     submit_button_f.disabled = !(validateNumber(phone_form_f.value) && name_form_f.value.length > 0)
   }
+
+  notification.onclick = () => notification.style.display = "none"
 
   phone_form_f.oninput = () => {
     const num = maskNumber(phone_form_f.value)
