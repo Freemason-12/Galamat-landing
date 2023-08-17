@@ -31,15 +31,17 @@ const container = qselect("#base-floor")
 const dir = "static/Images/blueprints/"
 
 function main() {
+  // Showing blueprints
   let currentIndex = 0
-  const images = ["Base floor.jpg", "%25R-0.webp", "%25R-1.webp", "%25R-2.webp", "%25R-3.webp", "%25R-4.webp", "%25R-5.webp", "%25R-6.webp"]
   const imageDOM = []
-  images.map((item) => {
+  for (let i = 1; i <= 9; i++) {
     const el = document.createElement("img")
+    const item = `plans_Page ${i}.png`
     el.src = `${dir}${item}`
     imageDOM.push(el)
-  })
+  }
 
+  // Floating button's functionality
   floating_contacts_button.onclick = () => {
     contacts_dropdown.dataset.show = "true"
   }
