@@ -8,6 +8,34 @@ function maskNumber(number) {
   else return number
 }
 
+// const ids = []
+//
+// function build_stage(element, index) {
+//   const images = element.querySelectorAll(".images img")
+//   const defStyle = getComputedStyle(images[0])
+//   const emptyStyle = `width: 0px; transition: width 0.3s;`
+//   for (let i = 0; i < images.length; i++) {
+//     if (i > 0) images[i].style = emptyStyle
+//   }
+//   const arrows = element.querySelector(".arrows")
+//   const move = (x) => {
+//     if (x == ">")
+//       if (ids[index] < images.length - 1) {
+//         images[ids[index]].style = emptyStyle
+//         images[ids[index] + 1].style = defStyle
+//         ids[index]++
+//       }
+//     if (x == "<")
+//       if (ids[index] > 0) {
+//         images[ids[index]].style = emptyStyle
+//         images[ids[index] - 1].style = defStyle
+//         ids[index]--
+//       }
+//   }
+//   arrows.children.item(0).onlcick = () => {move(">")}
+//   arrows.children.item(1).onlcick = () => {move("<")}
+// }
+
 const qselect = x => document.querySelector(x)
 
 const name_form = qselect("#name_form")
@@ -29,6 +57,8 @@ const nextButton = qselect(".arrow-right")
 const currentImage = qselect("#base-floor > img")
 const container = qselect("#base-floor")
 const dir = "static/Images/blueprints/"
+
+const buildCards = qselect("#sec-7-1 .container")
 
 function main() {
   // Showing blueprints
@@ -78,5 +108,10 @@ function main() {
     container.innerHTML = ""
     container.appendChild(imageDOM[currentIndex])
   }
+
+  // for (let i = 0; i < buildCards.children.length; i++) {
+  //   ids.push(0)
+  //   build_stage(buildCards.children.item(i), i)
+  // }
 }
 main()
