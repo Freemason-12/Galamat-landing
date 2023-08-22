@@ -946,6 +946,7 @@ img { border-radius:5px; }
 #sec-7-1{
     background: url(../Images/bg3.jpg);
     font-family: Montserrat, sans-serif;
+    padding: 28px 0px;
 }
 #sec-7-1 .container{
     display: flex;
