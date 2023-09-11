@@ -8,33 +8,19 @@ function maskNumber(number) {
   else return number
 }
 
-// const ids = []
-//
-// function build_stage(element, index) {
-//   const images = element.querySelectorAll(".images img")
-//   const defStyle = getComputedStyle(images[0])
-//   const emptyStyle = `width: 0px; transition: width 0.3s;`
-//   for (let i = 0; i < images.length; i++) {
-//     if (i > 0) images[i].style = emptyStyle
-//   }
-//   const arrows = element.querySelector(".arrows")
-//   const move = (x) => {
-//     if (x == ">")
-//       if (ids[index] < images.length - 1) {
-//         images[ids[index]].style = emptyStyle
-//         images[ids[index] + 1].style = defStyle
-//         ids[index]++
-//       }
-//     if (x == "<")
-//       if (ids[index] > 0) {
-//         images[ids[index]].style = emptyStyle
-//         images[ids[index] - 1].style = defStyle
-//         ids[index]--
-//       }
-//   }
-//   arrows.children.item(0).onlcick = () => {move(">")}
-//   arrows.children.item(1).onlcick = () => {move("<")}
-// }
+const preview = document.querySelector("#image_preview")
+const preview_img = document.querySelector("#image_preview > div")
+const preview_close = document.querySelector("#image_preview > img")
+const clickable_images = []
+
+function showImage(image) {
+  preview.style.display = 'flex'
+  preview_img.innerHTML = `<img src="${image.src}">`
+}
+
+function hideImage() {
+  preview.style.display = 'none'
+}
 
 const qselect = x => document.querySelector(x)
 
@@ -65,10 +51,10 @@ function main() {
   let currentIndex = 0
   const imageDOM = []
   for (let i = 1; i <= 9; i++) {
-    const el = document.createElement("img")
+    // const el = document.createElement("img")
     const item = `plans_Page ${i}.png`
-    el.src = `${dir}${item}`
-    imageDOM.push(el)
+    // el.src = `${dir}${item}`
+    imageDOM.push(`<img src="${dir}${item}">`)
   }
 
   // Floating button's functionality
@@ -99,19 +85,29 @@ function main() {
 
   nextButton.onclick = () => {
     currentIndex += (currentIndex < 7) ? 1 : (-7);
-    container.innerHTML = ""
-    container.appendChild(imageDOM[currentIndex])
+    container.innerHTML = imageDOM[currentIndex]
+    const im = container.children.item(0)
+    im.onclick = () => showImage(im)
+    // container.appendChild(imageDOM[currentIndex])
   }
 
   prevButton.onclick = () => {
     currentIndex -= (currentIndex > 0) ? 1 : (-7);
-    container.innerHTML = ""
-    container.appendChild(imageDOM[currentIndex])
+    container.innerHTML = imageDOM[currentIndex]
+    const im = container.children.item(0)
+    im.onclick = () => showImage(im)
+    // container.appendChild(imageDOM[currentIndex])
   }
 
-  // for (let i = 0; i < buildCards.children.length; i++) {
-  //   ids.push(0)
-  //   build_stage(buildCards.children.item(i), i)
-  // }
+  const blueprint_image = document.getElementById('blueprint_image')
+  blueprint_image.onclick = () => showImage(blueprint_image)
+  clickable_images.push(...document.querySelectorAll('#overflow img'))
+  clickable_images.push(...document.querySelectorAll('#dvor img'))
+  clickable_images.push(...document.querySelectorAll('#sec-6 .cont img'))
+  clickable_images.push(...document.querySelectorAll('#sec-7-1 .build-card img'))
+  for (let i of clickable_images) i.onclick = () => showImage(i)
+  preview.onclick = hideImage
+  preview_close.inclick = hideImage
+  hideImage()
 }
 main()

@@ -596,7 +596,7 @@ img { border-radius:5px; }
 }
 #sec-2 p, #sec-2 ul, #sec-6 p{
     color: var(--txtaccent);
-    font-size: 1rem;
+    font-size: rem;
     padding: 0px 6rem;
     margin-bottom: 2rem;
     text-align: justify;
@@ -871,6 +871,7 @@ img { border-radius:5px; }
     padding-top: 1.5rem;
     background-color: var(--haccent_withOpacity);
     border-bottom: solid 2rem var(--textaccent3);
+    height: 100%;
 }
 #sec-5 .contactUs h1,
 #sec-7 .contactUs h1{
@@ -951,6 +952,11 @@ img { border-radius:5px; }
 #sec-7-1 .container{
     display: flex;
     gap: 20px;
+}
+#sec-7-1 > div {
+    width: 90%;
+    overflow: scroll;
+    scrollbar-width: none;
 }
 #sec-7-1 h1 {
     text-align: center;
@@ -1165,6 +1171,11 @@ img { border-radius:5px; }
     width: 80%;
     height: auto;
 }
+/* button[class="arrow_left"], */
+/* button[class=".arrow-right"] { */
+/*     display: inline-block; */
+/*     margin: 0px 20px; */
+/* } */
 
 #dots {
     position: absolute;
@@ -1189,7 +1200,7 @@ img { border-radius:5px; }
     background-color: transparent;
     color: var(--haccent);
     opacity: 0.5;
-    margin:1rem;
+    margin:1rem 3rem;
 }
 .arrow-left:hover, .arrow-right:hover {opacity:0.7;}
 .arrow-left:active, .arrow-right:active {opacity:0.7;}
@@ -1213,11 +1224,48 @@ img { border-radius:5px; }
     color: var(--haccent);
 }
 
+#image_preview {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#image_preview > div {
+    width: 80%;
+    height: 80%;
+}
+#image_preview > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+#image_preview > img {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+#image_preview > img:hover { cursor: pointer;}
+#dvor img:hover,
+#base-floor img:hover,
+#overflow img:hover,
+#sec-6 .cont img:hover,
+#sec-7-1 .build_card img:hover { cursor: pointer; }
+
 /*MEDIA QUERRIES____________________________________________________________________*/
 /*Smart phones */
+@media(max-width: 576px) {
+    #sec-0, #sec-1, #sec-2, #sec-3,
+    #sec-2 p, #sec-2 ul, #sec-4 ul, #sec-4 .container p, #sec-6 p{
+        font-size: 15px;
+    }
+}
 @media (min-width: 576px) {
     html{
-        font-size: 13px;
+        font-size: 15px;
     }
     .container {
         width: 520px;
@@ -1238,6 +1286,10 @@ img { border-radius:5px; }
     #sec-0 #searchBox ,
     #stick #searchBox {
         transform: translateY(25px);
+    }
+    #sec-0, #sec-1, #sec-2, #sec-3,
+    #sec-2 p, #sec-2 ul, #sec-4 ul, #sec-4 .container p, #sec-6 p{
+        font-size: 15px;
     }
 }
 /* Medium devices (tablets, 768px and up) */
@@ -1692,9 +1744,10 @@ label, a{ /*при наведении на стрелки или переклю�
     flex-wrap: nowrap;
     width: 100%;
     overflow: scroll;
+    scrollbar-width: none;
 }
 #dvor > img {
-    width: 60vh;
+    width: 60vw;
     margin: 0px 5px 0px 5px;
 }
 
