@@ -63,7 +63,7 @@ func main() {
 }
 
 func (app *application) home(w http.ResponseWriter, r *http.Request) {
-	http.Redirect(w, r, "/kz", http.StatusSeeOther)
+	http.Redirect(w, r, "/ru", http.StatusSeeOther)
 }
 
 // Main handler which manages the landing page and its form (russian version)
