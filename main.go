@@ -1,16 +1,16 @@
 package main
 
 import (
+	"bytes"
 	"database/sql"
-	// "fmt"
+	"fmt"
+	_ "github.com/mattn/go-sqlite3"
 	"html/template"
 	"log"
 	"net/http"
 	"net/smtp"
 	"os"
 	"path/filepath"
-
-	_ "github.com/mattn/go-sqlite3"
 )
 
 type application struct {
@@ -83,6 +83,12 @@ func (app *application) serveRU(w http.ResponseWriter, r *http.Request) {
 		ErrorCheck(w, err)
 		sendEmail("Subject:" + name + " " + phone_num)
 
+		phone_num_format := "%0A%2B" + phone_num[1:12]
+		err = sendTelegramMessage(fmt.Sprintf("%s %s", name, phone_num_format))
+		if err != nil {
+			log.Fatal(err)
+		}
+
 		log.Println("record added")
 		http.Redirect(w, r, "/ru#sec-7", http.StatusSeeOther)
 	}
@@ -105,10 +111,28 @@ func (app *application) serveKZ(w http.ResponseWriter, r *http.Request) {
 		ErrorCheck(w, err)
 		sendEmail("Subject:" + name + " " + phone_num)
 
+		phone_num_format := "%0A%2B" + phone_num[1:12]
+		err = sendTelegramMessage(fmt.Sprintf("%s %s", name, phone_num_format))
+		if err != nil {
+			log.Fatal(err)
+		}
+
 		log.Println("record added")
 		http.Redirect(w, r, "/kz#sec-7", http.StatusSeeOther)
 	}
 
+}
+
+func sendTelegramMessage(message string) error {
+	var token string = os.Getenv("TELEGRAM_BOT_TOKEN")
+	var chatId string = os.Getenv("TELEGRAM_CHAT_ID")
+	const uri = "https://api.telegram.org/bot%s/SendMessage?chat_id=%s&parse_mode=html&text=%s"
+	response, err := http.Post(fmt.Sprintf(uri, token, chatId, message), "application/json", bytes.NewBuffer(make([]byte, 0)))
+	if err != nil {
+		return err
+	}
+	defer response.Body.Close()
+	return nil
 }
 
 func sendEmail(message string) {
